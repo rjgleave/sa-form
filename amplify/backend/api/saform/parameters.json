@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "saform",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authsaformc7911d8b",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

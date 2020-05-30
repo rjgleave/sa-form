@@ -1,0 +1,47 @@
+{
+  "name": "uniform-1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.7",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "ajv": "^6.12.2",
+    "aws-amplify": "^3.0.12",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "simpl-schema": "^1.7.3",
+    "uniforms": "^2.6.7",
+    "uniforms-bootstrap3": "^2.6.7",
+    "uniforms-bridge-graphql": "^2.6.7",
+    "uniforms-bridge-json-schema": "^2.6.7",
+    "uniforms-bridge-simple-schema-2": "^2.6.7",
+    "uniforms-semantic": "^2.6.7",
+    "uuid": "^8.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

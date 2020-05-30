@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-saform-dev-231142-authRole",
+            "UnauthRoleArn": "arn:aws:iam::286982715121:role/amplify-saform-dev-231142-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::286982715121:role/amplify-saform-dev-231142-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-saform-dev-231142-deployment",
+            "UnauthRoleName": "amplify-saform-dev-231142-unauthRole",
+            "StackName": "amplify-saform-dev-231142",
+            "StackId": "arn:aws:cloudformation:us-east-1:286982715121:stack/amplify-saform-dev-231142/76a3e810-9e35-11ea-b8d9-0a4fdb0c1726",
+            "AmplifyAppId": "d10va0k53zwnqw"
+        },
+        "categories": {
+            "auth": {
+                "saformc7911d8b": {}
+            }
+        }
+    }
+}
