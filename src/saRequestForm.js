@@ -30,7 +30,7 @@ let params = new URLSearchParams(search);
 let urlAcctLink = params.get('acctlink');
 let urlAcctName = params.get('acctname');
 let urlOptLink = params.get('optlink');
-console.log(acctname);
+console.log(urlAcctName);
 
 var handleAdd = (doc) => {
 
@@ -66,7 +66,7 @@ export default function RequestForm() {
     <AutoForm style={style} schema={RequestSchema} onSubmit={doc => handleAdd(doc)}>
       <h2>SA Activity/Support Request</h2>
       <Form.Group widths="equal">
-        <AutoField name="accountLink" value={urlAcctName} />
+        <AutoField name="accountLink" value={urlAcctLink} />
         <AutoField name="accountName" value={urlAcctName} />
         <AutoField name="accountOpportunity" value={urlOptLink}  />
       </Form.Group>

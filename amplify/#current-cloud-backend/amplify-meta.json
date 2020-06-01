@@ -10,11 +10,6 @@
 			"StackName": "amplify-saform-dev-231142",
 			"StackId": "arn:aws:cloudformation:us-east-1:286982715121:stack/amplify-saform-dev-231142/76a3e810-9e35-11ea-b8d9-0a4fdb0c1726",
 			"AmplifyAppId": "d10va0k53zwnqw"
-		},
-		"categories": {
-			"auth": {
-				"saformc7911d8b": {}
-			}
 		}
 	},
 	"auth": {
@@ -22,6 +17,11 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-saform-dev-231142-deployment/amplify-cfn-templates/auth/saformc7911d8b-cloudformation-template.yml",
+				"logicalId": "authsaformc7911d8b"
+			},
+			"lastPushTimeStamp": "2020-06-01T20:54:11.189Z",
 			"output": {
 				"AppClientSecret": "h5ei9d1redbthjlth0e2fh0b6jvuea3q0bvboegsggnav4busbd",
 				"UserPoolId": "us-east-1_rTPG6lK7V",
@@ -31,11 +31,6 @@
 				"IdentityPoolName": "saformc7911d8b_identitypool_c7911d8b__dev",
 				"UserPoolName": "saformc7911d8b_userpool_c7911d8b"
 			},
-			"lastPushTimeStamp": "2020-06-01T17:48:33.260Z",
-			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-saform-dev-231142-deployment/amplify-cfn-templates/auth/saformc7911d8b-cloudformation-template.yml",
-				"logicalId": "authsaformc7911d8b"
-			},
 			"lastPushDirHash": "+NhaxgVwPUosh7ltHqC1qb+OF1Y="
 		}
 	},
@@ -44,21 +39,21 @@
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true,
+			"lastBuildTimeStamp": "2020-05-25T03:25:45.890Z",
+			"lastPackageTimeStamp": "2020-05-25T03:25:45.951Z",
+			"distZipFilename": "S3Trigger5eaead9b-703864314e69317a4d62-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-saform-dev-231142-deployment/amplify-cfn-templates/function/S3Trigger5eaead9b-cloudformation-template.json",
+				"logicalId": "functionS3Trigger5eaead9b"
+			},
+			"lastPushTimeStamp": "2020-06-01T20:54:11.192Z",
 			"output": {
 				"Region": "us-east-1",
 				"Arn": "arn:aws:lambda:us-east-1:286982715121:function:S3Trigger5eaead9b-dev",
 				"Name": "S3Trigger5eaead9b-dev",
 				"LambdaExecutionRole": "S3Trigger5eaead9bLambdaRole5eaead9b-dev"
 			},
-			"lastPushTimeStamp": "2020-06-01T17:48:33.260Z",
-			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-saform-dev-231142-deployment/amplify-cfn-templates/function/S3Trigger5eaead9b-cloudformation-template.json",
-				"logicalId": "functionS3Trigger5eaead9b"
-			},
-			"lastBuildTimeStamp": "2020-06-01T17:47:31.328Z",
-			"lastPackageTimeStamp": "2020-06-01T17:47:31.354Z",
-			"distZipFilename": "S3Trigger5eaead9b-703864314e69317a4d62-build.zip",
-			"lastPushDirHash": "CnuyQebNDpF9vR89jJ1f+RUMPVw="
+			"lastPushDirHash": "4rSzcg56jGg5MfVqpNOn5nGQymA="
 		}
 	},
 	"storage": {
@@ -76,14 +71,14 @@
 					]
 				}
 			],
-			"output": {
-				"BucketName": "one-q-raw-form-data231142-dev",
-				"Region": "us-east-1"
-			},
-			"lastPushTimeStamp": "2020-06-01T17:48:33.260Z",
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-saform-dev-231142-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storageS3formData"
+			},
+			"lastPushTimeStamp": "2020-06-01T20:54:11.194Z",
+			"output": {
+				"BucketName": "one-q-raw-form-data231142-dev",
+				"Region": "us-east-1"
 			},
 			"lastPushDirHash": "W7CCsVrax0ClMfDONyOPPUi+xi4="
 		}
@@ -105,12 +100,12 @@
 				"GraphQLAPIIdOutput": "nkbguzutsvdsfcn4re5gk6znby",
 				"GraphQLAPIEndpointOutput": "https://riyhzvut2nei5kowcailcuae5u.appsync-api.us-east-1.amazonaws.com/graphql"
 			},
-			"lastPushTimeStamp": "2020-06-01T17:48:33.260Z",
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-saform-dev-231142-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apisaform"
 			},
-			"lastPushDirHash": "8MlPgybUgQClPOhPkXsk1/byZ4g="
+			"lastPushTimeStamp": "2020-06-01T20:54:12.694Z",
+			"lastPushDirHash": "hl38wVUlwXEBXHyIm0MVPmWxnuc="
 		}
 	}
 }

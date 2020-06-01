@@ -10,5 +10,5 @@
         ]
     },
     "S3DeploymentBucket": "amplify-saform-dev-231142-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/9894e4a37837a05237c132ec9719942cea8bff07"
+    "S3DeploymentRootKey": "amplify-appsync-files/3e7f8786b581fe3067d73c801733a489ab1861bc"
 }
