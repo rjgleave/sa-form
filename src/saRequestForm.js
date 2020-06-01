@@ -30,7 +30,7 @@ let params = new URLSearchParams(search);
 let urlAcctLink = params.get('acctlink');
 let urlAcctName = params.get('acctname');
 let urlOptLink = params.get('optlink');
-console.log(name);
+console.log(acctname);
 
 var handleAdd = (doc) => {
 
