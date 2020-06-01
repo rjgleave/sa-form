@@ -13,6 +13,7 @@ import {
   ErrorsField,
   DateField,
   RadioField,
+  LongTextField,
   SubmitField
 } from 'uniforms-semantic';
 
@@ -26,9 +27,9 @@ const style = {
 let search = window.location.search;
 let params = new URLSearchParams(search);
 // Salesforce account data passed into this script
-let link = params.get('link');
-let name = params.get('name');
-let opportunity = params.get('opportunity');
+let urlAcctLink = params.get('acctlink');
+let urlAcctName = params.get('acctname');
+let urlOptLink = params.get('optlink');
 console.log(name);
 
 var handleAdd = (doc) => {
@@ -65,9 +66,9 @@ export default function RequestForm() {
     <AutoForm style={style} schema={RequestSchema} onSubmit={doc => handleAdd(doc)}>
       <h2>SA Activity/Support Request</h2>
       <Form.Group widths="equal">
-        <AutoField name="accountLink" />
-        <AutoField name="accountName" />
-        <AutoField name="accountOpportunity" />
+        <AutoField name="accountLink" value={urlAcctName} />
+        <AutoField name="accountName" value={urlAcctName} />
+        <AutoField name="accountOpportunity" value={urlOptLink}  />
       </Form.Group>
       <h3>Activity Details</h3>
       <Form.Group widths="equal">
@@ -79,7 +80,7 @@ export default function RequestForm() {
         <AutoField name="activityDomain" />
         <AutoField name="activityComplexity" /> 
       </Form.Group>    
-      <AutoField name="activityDetails" />
+      <LongTextField name="activityDetails" />
       <Form.Group widths="equal">
         <DateField name="activityFromDate" />
         <DateField name="activityToDate" />

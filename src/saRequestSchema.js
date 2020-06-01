@@ -48,7 +48,7 @@ const simpleRequestSchema = new SimpleSchema({
   activityType: { label: 'Activity Type', type: String, allowedValues: formValues.activityTypes },
   activityTopic: { label: 'Topic', type: String, allowedValues: formValues.activityTopics },
   activityDomain: { label: 'Domain', type: String, allowedValues: formValues.activityDomains },
-  activityComplexity: { label: 'Domain', type: String, allowedValues: formValues.activityComplexity },
+  activityComplexity: { label: 'Complexity', type: String, allowedValues: formValues.activityComplexity },
   activityDetails: { label: 'Activity Details', type: String, optional: true, defaultValue: '' },
   activityFromDate: { label: 'Date Range From:', type: Date, defaultValue: new Date() },
   activityToDate: { label: 'Date Range To:', type: Date, defaultValue: new Date() },
