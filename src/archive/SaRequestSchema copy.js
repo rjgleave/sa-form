@@ -1,144 +1,60 @@
 import Ajv from 'ajv';
-import { JSONSchemaBridge } from 'uniforms-bridge-json-schema';
+import SimpleSchema from 'simpl-schema';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 
 // NOTE:  Uniforms tutorial omitted this line below, needed to compile
-import {LongTextField} from 'uniforms-semantic';
+import {LongTextField, DateField} from 'uniforms-semantic';
 
-const schema = {
-  title: 'Request',
-  type: 'object',
-  properties: {
-    accountLink: { type: 'string' },
-    accountName: { type: 'string' },
-    accountOpportunity: { type: 'string' },
-    activityTitle: { type: 'string' },
-    activityType: {
-      type: 'string',
-      options: [
-        {
-          label: 'Meeting / Office Hours [Management]',
-          value: 'Support'
-        },
-        {
-          label: 'Service Deep Dive [Workshops]',
-          value: 'Service Discovery'
-        },
-        {
-          label: 'AOD/SME/Specialist [Thought Leadership]',
-          value: 'Thought Leadership'
-        },
-        {
-          label: 'Architecture Review [Architecture]',
-          value: 'Architecture'
-        },
-        {
-          label: 'Immersion Day [Workshops]',
-          value: 'Workshops'
-        },
-        {
-          label: 'Migration Readiness Assessment [Architecture]',
-          value: 'MRA'
-        },
-        {
-          label: 'Account Planning [Management]',
-          value: 'Management'
-        }
-      ]
-    },
-    activityTopic: {
-      type: 'string',
-      options: [
-        {
-          label: 'Analytics',
-          value: 'Analytics'
-        },
-        {
-          label: 'Application Development',
-          value: 'Application Development'
-        },
-        {
-          label: 'Athena',
-          value: 'Athena'
-        },
-        {
-          label: 'Cloudendure Migration',
-          value: 'Cloudendure Migration'
-        }
-      ]
-    },
-    activityDomain: {
-      type: 'string',
-      options: [
-        {
-          label: 'Blockchain',
-          value: 'Blockchain'
-        },
-        {
-          label: 'Compute/HPC',
-          value: 'Compute/HPC'
-        },
-        {
-          label: 'Containers',
-          value: 'Containers'
-        }
-      ]
-    },
-    activityComplexity: {
-      type: 'string',
-      options: [
-        {
-          label: '100: Introductory and overview engagement.',
-          value: '100 Level'
-        },
-        {
-          label: '200: Intermediate engagement; requires specific details about the topic.',
-          value: '200 Level'
-        },
-        {
-          label: '300: Advanced material; requires in-depth understanding of features in a real-world environment',
-          value: '300 Level'
-        },
-        {
-          label: '400: Expert engagement; requires expert-to-expert interaction and coverage of specialized topics',
-          value: '400 Level'
-        } 
-      ]
-    },
-    activityFromDate: {
-      format: 'date',
-      type: 'string'
-    },
-    activityToDate: {
-      format: 'date',
-      type: 'string'
-    },
-    activityDetails: {
-      type: 'string',
-      uniforms: {
-        component: LongTextField
-      },
-    },
-    activityLocation: { type: 'string' },
-    activityInteractionType: {
-      type: 'string',
-      options: [
-        {
-          label: 'Virtual meeting',
-          value: 'Virtual meeting'
-        },
-        {
-          label: 'On Site meeting',
-          value: 'On Site meeting'
-        },
-        {
-          label: 'email',
-          value: 'email'
-        }
-      ]
-    },
-  },
-  //required: ['accountName','activityType','activityLocation']
+const formValues = {
+  activityTypes: [
+    'Meeting / Office Hours [Management]', 
+    'Service Deep Dive [Workshops]', 
+    'AOD/SME/Specialist [Thought Leadership]', 
+    'Architecture Review [Architecture]', 
+    'Immersion Day [Workshops]'
+  ],
+  activityTopics: [
+    'Analytics', 
+    'Application Development', 
+    'Athena', 
+    'Cloudendure Migration', 
+    'Immersion Day [Workshops]'
+  ],
+  activityDomains: [
+    'Blockchain', 
+    'Compute/HPC', 
+    'Containers', 
+    'AI/ML'
+  ],
+  activityComplexity: [
+    '100: Introductory and overview engagement', 
+    '200: Intermediate engagement; requires specific details about the topic', 
+    '300: Advanced material; requires in-depth understanding of features in a real-world environment', 
+    '400: Expert engagement; requires expert-to-expert interaction and coverage of specialized topics'
+  ],
+  activityInteractionType: [
+    'Virtual Meeting', 
+    'Onsite Meeting', 
+    'Email'
+  ],
+
 };
+
+const simpleRequestSchema = new SimpleSchema({
+  accountLink: { label: 'Salesforce Account Link', type: String },
+  accountName: { label: 'Account Name', type: String },
+  accountOpportunity: { label: 'Salesforce Opportunity Link', type: String },
+  activityTitle: { label: 'Activity Title', type: String },
+  activityType: { label: 'Activity Type', type: String, allowedValues: formValues.activityTypes },
+  activityTopic: { label: 'Topic', type: String, allowedValues: formValues.activityTopics },
+  activityDomain: { label: 'Domain', type: String, allowedValues: formValues.activityDomains },
+  activityComplexity: { label: 'Complexity', type: String, allowedValues: formValues.activityComplexity },
+  activityDetails: { label: 'Activity Details', type: String, optional: true, defaultValue: '' },
+  activityFromDate: { label: 'Date Range From:', type: Date, defaultValue: new Date() },
+  activityToDate: { label: 'Date Range To:', type: Date, defaultValue: new Date() },
+  activityLocation: { label: 'Activity Location', type: String },
+  activityInteractionType: { label: 'Interaction Type', type: String, allowedValues: formValues.activityInteractionType },
+});
 
 
 const ajv = new Ajv({ allErrors: true, useDefaults: true });
@@ -155,8 +71,8 @@ function createValidator(schema) {
   };
 }
 
-const schemaValidator = createValidator(schema);
+const schemaValidator = createValidator(simpleRequestSchema);
 
-const bridge = new JSONSchemaBridge(schema, schemaValidator);
+const bridge = new SimpleSchema2Bridge(simpleRequestSchema, schemaValidator);
 
 export default bridge;

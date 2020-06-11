@@ -86,7 +86,6 @@ export default function RequestForm() {
         <DateField name="activityToDate" />
       </Form.Group>
       <AutoField name="activityLocation" />    
-      <AutoField name="routeToGroup" />     
       <RadioField name="activityInteractionType" />
       <SubmitField value='Submit Request'/>
       <ErrorsField />

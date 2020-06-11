@@ -37,6 +37,11 @@ const formValues = {
     'Onsite Meeting', 
     'Email'
   ],
+  routeToGroup: [
+    'Account SA Team for this customer', 
+    'Central SA', 
+    'Specialists (Specreq)'
+  ],
 
 };
 
@@ -53,6 +58,7 @@ const simpleRequestSchema = new SimpleSchema({
   activityFromDate: { label: 'Date Range From:', type: Date, defaultValue: new Date() },
   activityToDate: { label: 'Date Range To:', type: Date, defaultValue: new Date() },
   activityLocation: { label: 'Activity Location', type: String },
+  routeToGroup: { label: 'Route To Group', type: String, allowedValues: formValues.routeToGroup},
   activityInteractionType: { label: 'Interaction Type', type: String, allowedValues: formValues.activityInteractionType },
 });
 
