@@ -64,7 +64,7 @@ export default function RequestForm() {
   return (
     <form>
     <AutoForm style={style} schema={RequestSchema} onSubmit={doc => handleAdd(doc)}>
-      <h2>SA Activity/Support Request</h2>
+      <h2>SA Activity/Support Request Form</h2>
       <Form.Group widths="equal">
         <AutoField name="accountLink" value={urlAcctLink} />
         <AutoField name="accountName" value={urlAcctName} />
